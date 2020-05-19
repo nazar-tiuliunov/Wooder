@@ -1,0 +1,154 @@
+.header {
+	position: relative;
+	min-height: 1068px;
+	&__top {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+		&--flex {
+			@include flex;
+			justify-content: space-between;
+		}
+	}
+	&__menu {
+		@include flex;
+	}
+	&__burger-text {
+		opacity: 0.5;
+		color: #fff;
+		font-family: $PBd;
+		font-size: 15px;
+		line-height: 27px;
+		text-transform: uppercase;
+		letter-spacing: 0.38px;
+	}
+	&__burger {
+		position: relative;
+		width: 30px;
+		height: 20px;
+		margin: 0 15px 0 20px;
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			left: 0;
+			background: #bea67c;
+			border-radius: 7px;
+			transition: .3s linear;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			left: 0;
+			top: 9px;
+			background: #bea67c;
+			border-radius: 7px;
+		}
+	}
+	&__main {
+		@include flex;
+	}
+	&__logo {
+		&--text {
+			position: relative;
+			color: #fff;
+			font-family: $PBd;
+			@include adaptive-font(36, 24);
+			text-transform: uppercase;
+			letter-spacing: 10.8px;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				@include adaptive-width(64, 50);
+				height: 4px;
+				background-color: #bea67c;
+				transform: translate(-105%, -50%);
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		li {
+			margin: 0 0 0 100px;
+		}
+		 a {
+			opacity: 0.5;
+			color: #fff;
+			font-family: $PBd;
+			font-size: 15px;
+			line-height: 27px;
+			text-transform: uppercase;
+			letter-spacing: 0.38px;
+			&:hover {
+			opacity: 1;
+			}
+		}
+	}
+	&__inf {
+		display: flex;
+	}
+	&__faq {
+		@include flex;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		padding: 10px;
+		color: #fff;
+		opacity: 0.5;
+		font-family: $PBd;
+		font-size: 17px;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&__lang {
+		margin: 0 0 0 50px;
+		opacity: 0.5;
+		color: #fff;
+		background: transparent;
+		font-family: $PBd;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 0.75px;
+		outline: none;
+		&:hover {
+			opacity: 1;
+		}
+		option {
+			color: #fff;
+			background: #bea67c;
+		}
+	}
+	&__background-1 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #000;
+		z-index: 1;
+	}
+	&__background-2 {
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: #000;
+		z-index: 2;
+	}
+}
