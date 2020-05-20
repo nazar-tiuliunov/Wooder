@@ -16,14 +16,51 @@
 		}
 	}
 }
-
 @media screen and (max-width: 768px){
 	.header {
+		min-height: 600px;
+		&__container {
+			min-height: 600px;
+			&--flex {
+				flex-direction: column;
+				justify-content: center;
+				min-height: 600px;
+				padding: 70px 15px 15px 15px;
+			}
+		}
 		&__navigation {
 			display: none;
 		}
 		&__burger-text {
 			display: none;
+		}
+		&__graphic {
+			flex-direction: row;
+			align-items: center;
+			order: 3;
+			&--line {
+				margin: -10px 0 0 0;
+				transform: rotate(-90deg);
+			}
+			&--number {
+				transform: rotate(0deg);
+			}
+			&--dots {
+				display: flex;
+				margin: 50px 0 0 0;
+			}
+		}
+		&__button {
+			max-width: 250px;
+			margin: 5% 0;
+		}
+		&__some-text {
+			height: 14px;
+			padding: 0;
+			transform: rotate(-90deg);
+			span {
+				min-width: 0;
+			}
 		}
 	}
 }

@@ -1,12 +1,16 @@
 .header {
 	position: relative;
 	min-height: 1068px;
+	overflow: hidden;
 	&__top {
 		position: fixed;
 		left: 0;
 		top: 0;
 		width: 100%;
-		z-index: 3;
+		z-index: 20;
+		&.active {
+			background: rgba(0, 0, 0, 0.5);
+		}
 		&--flex {
 			@include flex;
 			justify-content: space-between;
@@ -151,4 +155,143 @@
 		background: #000;
 		z-index: 2;
 	}
+	// main content of header
+
+	&__container {
+		position: relative;
+		min-height: 1068px;
+		z-index: 10;
+		&--flex {
+			display: flex;
+			justify-content: space-between;
+			min-height: 1068px;
+			padding: 50px 0 0 0;
+		}
+	}
+
+	&__graphic {
+		@include flex;
+		flex-direction: column;
+		max-width: 350px;
+		width: 100%;
+		&--line {
+			width: 110px;
+			margin: 0 0 20px 0;
+			span {
+				display: block;
+				width: 4px;
+				height: 51px;
+				margin: 0 auto;
+				background-color: #c0af91;
+			}
+		}
+		&--number {
+			width: 110px;
+			color: #bea67c;
+			font-family: $PBd;
+			font-size: 75px;
+			text-transform: uppercase;
+			letter-spacing: 9px;
+			transform: rotate(90deg);
+		}
+		&--dots {
+			width: 110px;
+			height: 110px;
+			margin: 70px 0 0 0;
+		}
+		&--dot {
+			width: 10px;
+			height: 10px;
+			margin: 20px auto;
+			background-color: #bea67c;
+			border-radius: 50%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		&--scroll {
+			// graphic art
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 20px;
+			&-img {
+				width: 20px;
+				height: 30px;
+			}
+			&-arrow {
+				margin: 15px 0;
+				color: #fff;
+			}
+			&-text {
+				max-width: 66px;
+				height: 20px;
+				margin: 15px 0 0 0;
+				opacity: 0.1;
+				color: #fff;
+				font-family: $PBd;
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 2.8px;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	&__heading {
+		color: #bea67c;
+		font-family: $PBd;
+		@include adaptive-font(100, 36);
+		@include adaptive-lh(100, 36);
+		text-transform: uppercase;
+		letter-spacing: 20.01px;
+	}
+	&__button {
+		max-width: 307px;
+		width: 100%;
+		height: 58px;
+		margin: 10% 0;
+		color: #fff;
+		font-family: $PBd;
+		font-size: 14px;
+		line-height: 50px;
+		letter-spacing: 2.8px;
+		background: transparent;
+		border: 2px solid #fff;
+		text-transform: uppercase;
+		span {
+			padding: 0 10px;
+		}
+	}
+
+	&__some-text {
+		@include flex;
+		max-width: 14px;
+		width: 100%;
+		min-height: 250px;
+		padding: 0 15px;
+		span {
+			min-width: 250px;
+			height: 14px;
+			opacity: 0.2;
+			color: #bea67c;
+			font-family: $PBd;
+			font-size: 14px;
+			letter-spacing: 4.81px;
+			text-transform: uppercase;
+			transform: rotate(90deg);
+		}
+	}
+}
+// classes for dots in .header__graphic
+.dot-2 {
+	opacity: 0.75;
+}
+.dot-3 {
+	opacity: 0.5;
+}
+.dot-4 {
+	opacity: 0.25;
 }
