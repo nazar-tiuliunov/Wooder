@@ -8,6 +8,7 @@
 		top: 0;
 		width: 100%;
 		z-index: 20;
+		transition: .1s linear;
 		&.active {
 			background: rgba(0, 0, 0, 0.5);
 		}
@@ -143,20 +144,26 @@
 	}
 	&__background-1 {
 		position: absolute;
+		min-width: 60%;
+		height: 1001px;
 		left: 0;
 		top: 0;
 		background: #000;
 		z-index: 1;
+		overflow: hidden;
+		img{min-width: 100%;}
 	}
 	&__background-2 {
 		position: absolute;
+		min-width: 40%;
+		height: 1050px;
 		right: 0;
 		top: 0;
 		background: #000;
-		z-index: 2;
+		z-index: 1;
+		img{min-width: 100%;}
 	}
 	// main content of header
-
 	&__container {
 		position: relative;
 		min-height: 1068px;
@@ -172,7 +179,7 @@
 	&__graphic {
 		@include flex;
 		flex-direction: column;
-		max-width: 350px;
+		align-items: flex-start;
 		width: 100%;
 		&--line {
 			width: 110px;
@@ -206,6 +213,16 @@
 			background-color: #bea67c;
 			border-radius: 50%;
 		}
+		&--letter {
+			margin: 0 0 -600px 0;
+			opacity: 0.07;
+			color: #bea67c;
+			font-family: $PBd;
+			font-size: 396px;
+			text-transform: uppercase;
+			letter-spacing: 18px;
+			z-index: 5;
+		}
 	}
 
 	&__content {
@@ -223,12 +240,24 @@
 				height: 30px;
 			}
 			&-arrow {
-				margin: 15px 0;
-				color: #fff;
+				margin: 20px 0 30px 0;
+				position: relative;
+				width:2px;
+				height: 74px;
+				background: #fff;
+				&::after {
+					content: '';
+					position: absolute;
+					left: -4px;
+					bottom: 0;
+					width: 10px;
+					height: 10px;
+					border-top: 2px solid #fff;
+					border-right: 2px solid #fff;
+					transform: rotate(135deg);
+				}
 			}
 			&-text {
-				max-width: 66px;
-				height: 20px;
 				margin: 15px 0 0 0;
 				opacity: 0.1;
 				color: #fff;
@@ -243,7 +272,7 @@
 	&__heading {
 		color: #bea67c;
 		font-family: $PBd;
-		@include adaptive-font(100, 36);
+		@include adaptive-font(100, 40);
 		@include adaptive-lh(100, 36);
 		text-transform: uppercase;
 		letter-spacing: 20.01px;
@@ -267,12 +296,13 @@
 	}
 
 	&__some-text {
-		@include flex;
-		max-width: 14px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 		width: 100%;
 		min-height: 250px;
 		padding: 0 15px;
-		span {
+		&--inf {
 			min-width: 250px;
 			height: 14px;
 			opacity: 0.2;
@@ -282,6 +312,12 @@
 			letter-spacing: 4.81px;
 			text-transform: uppercase;
 			transform: rotate(90deg);
+		}
+		&--line {
+			width: 4px;
+			height: 51px;
+			margin: 0 0 -970px 0;
+			background-color: #bea67c;
 		}
 	}
 }

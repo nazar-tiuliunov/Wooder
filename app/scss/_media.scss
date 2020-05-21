@@ -4,13 +4,6 @@
 			li {margin: 0 0 0 30px;}
 		}
 		&__lang {margin: 0 0 0 25px;}
-		&__background-1 {
-			width: 60%;
-		}
-		&__background-2 {
-			width: 40%;
-			z-index: 1;
-		}
 		&__logo--text::before {
 			transform: translate(-107%, -50%);
 		}
@@ -27,6 +20,16 @@
 				min-height: 600px;
 				padding: 70px 15px 15px 15px;
 			}
+		}
+		&__background-1 {
+			min-width: 0;
+			width: 60%;
+			img {min-width: 0;}
+		}
+		&__background-2 {
+			min-width: 0;
+			width: 40%;
+			img {min-width: 0;}
 		}
 		&__navigation {
 			display: none;
@@ -49,6 +52,9 @@
 				display: flex;
 				margin: 50px 0 0 0;
 			}
+			&--letter {
+				display: none;
+			}
 		}
 		&__button {
 			max-width: 250px;
@@ -57,10 +63,11 @@
 		&__some-text {
 			height: 14px;
 			padding: 0;
-			transform: rotate(-90deg);
-			span {
+			&--inf {
 				min-width: 0;
+				transform: rotate(0);
 			}
+			&--line {display: none;}
 		}
 	}
 }
