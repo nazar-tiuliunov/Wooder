@@ -1,3 +1,13 @@
+@media screen and (max-width: 1440px){
+	.about {
+		&__heading::before {
+			display: none;
+		}
+		&__paragraph::before {
+			display: none;
+		}
+	}
+}
 @media screen and (max-width: 1024px){
 	.header {
 		&__list {
@@ -6,6 +16,11 @@
 		&__lang {margin: 0 0 0 25px;}
 		&__logo--text::before {
 			transform: translate(-107%, -50%);
+		}
+	}
+	.about {
+		&__graphic {
+			margin: 50px 25px;
 		}
 	}
 }
@@ -68,6 +83,23 @@
 				transform: rotate(0);
 			}
 			&--line {display: none;}
+		}
+	}
+	.about {
+		&__item {
+			flex-direction: column;
+			&.right {
+				flex-direction: column-reverse;
+			}
+		}
+		&__number {
+			padding: 0 20px 0 0;
+			&.right {
+				padding: 0 0 0 20px;
+			}
+		}
+		&__graphic {
+			margin: 15px;
 		}
 	}
 }
