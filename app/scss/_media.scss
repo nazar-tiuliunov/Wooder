@@ -67,9 +67,7 @@
 				display: flex;
 				margin: 50px 0 0 0;
 			}
-			&--letter {
-				display: none;
-			}
+
 		}
 		&__button {
 			max-width: 250px;
@@ -82,12 +80,17 @@
 				min-width: 0;
 				transform: rotate(0);
 			}
-			&--line {display: none;}
 		}
 	}
 	.about {
 		&__item {
 			flex-direction: column;
+			&::before {
+				display: none;
+			}
+			&::after {
+				top: -13%;
+			}
 			&.right {
 				flex-direction: column-reverse;
 			}
