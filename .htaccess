@@ -1,8 +1,3 @@
-AddType application/x-javascript .js
-AddType text/css .css
-AddType text/xml .xml
-AddType application/octet-stream .doc .mov .avi .pdf .xls 
-
 <IfModule mod_gzip.c>
 mod_gzip_on Yes
 mod_gzip_dechunk Yes
@@ -20,20 +15,11 @@ mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
   allow from 192.168.1.22
 </FilesMatch>
 
-<ifModule mod_headers.c>
-  <FilesMatch "\.(html|htm)$">
-      Header set Cache-Control "max-age=43200"
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header append Cache-Control "max-age=172800, must-revalidate"
   </FilesMatch>
-  #кэшировать css, javascript и текстовые файлы на одну неделю
-  <FilesMatch "\.(js|css|txt)$">
-      Header set Cache-Control "max-age=604800"
-  </FilesMatch>
-  #кэшировать флэш и изображения на месяц
-  <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
-      Header set Cache-Control "max-age=2592000"
-  </FilesMatch>
-  #отключить кэширование
-  <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
-      Header unset Cache-Control
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|svg|mp4|mov|swf|woff|woff2)$">
+    Header set Cache-Control "max-age=1209600, must-revalidate"
   </FilesMatch>
 </IfModule>
