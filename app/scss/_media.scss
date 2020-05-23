@@ -61,11 +61,16 @@
 				transform: rotate(-90deg);
 			}
 			&--number {
+				width: 70px;
 				transform: rotate(0deg);
+				span {
+					font-size: 50px;
+				}
 			}
 			&--dots {
 				display: flex;
-				margin: 50px 0 0 0;
+				height: 50px;
+				margin: 0 0 0 0;
 			}
 
 		}
@@ -74,7 +79,7 @@
 			margin: 5% 0;
 		}
 		&__some-text {
-			height: 14px;
+			min-height: 70px;
 			padding: 0;
 			&--inf {
 				min-width: 0;
@@ -87,9 +92,6 @@
 			flex-direction: column;
 			&::before {
 				display: none;
-			}
-			&::after {
-				top: -13%;
 			}
 			&.right {
 				flex-direction: column-reverse;

@@ -27,7 +27,7 @@
 			content: '';
 			position: absolute;
 			right: 0;
-			top: -20%;
+			top: -85px;
 			width: 4px;
 			height: 51px;
 			background-color: #bea67c;
@@ -39,7 +39,7 @@
 				right: 0;
 			}
 			&::after {
-				top: 105%;
+				top: 430px;
 			}
 		}
 	}
@@ -150,7 +150,7 @@
 		}
 		&.right {
 			&::after {
-				right: 105%;
+				right: 115%;
 			}
 			&::before {
 				left: 60%;

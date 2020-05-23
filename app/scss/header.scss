@@ -195,10 +195,12 @@
 			width: 110px;
 			color: #bea67c;
 			font-family: $PBd;
-			font-size: 75px;
 			text-transform: uppercase;
 			letter-spacing: 9px;
 			transform: rotate(90deg);
+			span {
+				font-size: 75px;
+			}
 		}
 		&--dots {
 			width: 110px;
@@ -268,7 +270,6 @@
 	&__button {
 		max-width: 307px;
 		width: 100%;
-		height: 58px;
 		margin: 10% 0;
 		color: #fff;
 		font-family: $PBd;
@@ -278,9 +279,6 @@
 		background: transparent;
 		border: 2px solid #fff;
 		text-transform: uppercase;
-		span {
-			padding: 0 10px;
-		}
 	}
 	&__some-text {
 		display: flex;
