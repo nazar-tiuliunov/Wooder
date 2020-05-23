@@ -1,3 +1,4 @@
+// about-section
 .about {
 	
 	&__flex {
@@ -190,4 +191,100 @@
 }
 .right {
 	text-align: right;
+}
+
+// projects-section
+
+.project {
+
+	&__flex {
+		padding: 50px 0;
+		text-align: center;
+	}
+	&__block {
+		padding: 15px;
+	}
+	&__heading {
+		color: #000;
+		font-family: $PBd;
+		@include adaptive-font(48, 24);
+		text-transform: uppercase;
+		letter-spacing: 3.36px;
+	}
+	&__line {
+		width: 44px;
+		height: 4px;
+		margin: 10px auto 20px auto;
+		background-color: #bea67c;
+	}
+	&__text {
+		color: #636262;
+		font-family: $PRg;
+		@include adaptive-font(15, 13);
+		@include adaptive-lh(25, 18);
+		letter-spacing: 0.38px;
+	}
+	&__container {
+		position: relative;
+		@include flex;
+		padding: 50px 0;
+	}
+	&__item {
+		min-width: 272px;
+		margin: 2rem;
+		&--block {
+			position: relative;
+			max-width: 268px;
+			width: 100%;
+			min-height: 268px;
+			margin: 0 auto;
+			border-radius: 50%;
+			border: 1px solid #e1e1e1;
+		}
+		&--bg {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			max-width: 243px;
+			width: 100%;
+			min-height: 243px;
+			border-radius: 50%;
+			background: #000 url("../img/video/1.webp") center / cover;
+			transform: translate(-50%, -50%);
+			&.second {
+				background: #000 url("../img/video/2.webp") center / cover;
+			}
+			&.third {
+				background: #000 url("../img/video/3.webp") center / cover;
+			}
+		}
+		&--btn {
+			@include flex;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 68px;
+			height: 68px;
+			padding: 0;
+			background-color: #bea67c;
+			border-radius: 50%;
+			opacity: 0.8;
+			transform: translate(-50%, -50%);
+			img {
+				padding: 0 0 0 5px;
+			}
+		}
+		&--line {
+			width: 25px;
+			height: 1px;
+			margin: 20px auto 15px auto;
+			border: 1px solid #bea67c;
+		}
+		&--heading {
+			color: #000;
+			font-family: $PRg;
+			line-height: 24px;
+			letter-spacing: 0.4px;
+		}
+	}
 }

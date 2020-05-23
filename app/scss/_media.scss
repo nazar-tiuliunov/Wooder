@@ -24,6 +24,13 @@
 		}
 	}
 }
+@media screen and (max-width: 970px){
+	.project {
+		&__container {
+			flex-wrap: wrap;
+		}
+	}
+}
 @media screen and (max-width: 768px){
 	.header {
 		min-height: 600px;
@@ -104,6 +111,17 @@
 			}
 		}
 		&__graphic {
+			margin: 15px;
+		}
+	}
+	.project {
+		&__flex {
+			padding: 25px 0;
+		}
+		&__container {
+			padding: 25px 0;
+		}
+		&__item {
 			margin: 15px;
 		}
 	}
