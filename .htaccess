@@ -1,16 +1,14 @@
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml
-  text/javascript text/css application/x-javascript
-  BrowserMatch ^Mozilla/4 gzip-only-text/html
-  BrowserMatch ^Mozilla/4.0[678] no-gzip
-  BrowserMatch bMSIE !no-gzip !gzip-only-text/html
-  <ifModule mod_gzip.c>
-    mod_gzip_on Yes
-    mod_gzip_item_include file \.js$
-    mod_gzip_item_include file \.css$
-  </ifModule>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/css
+  <IfModule mod_setenvif.c>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  </IfModule>
 </IfModule>
-
 
 <FilesMatch ~ "\.(php|htaccess|html|js)$">
   Order allow,deny
