@@ -103,8 +103,14 @@
 			&::before {
 				display: none;
 			}
+			&::after {
+				top: -60px;
+			}
 			&.right {
 				flex-direction: column-reverse;
+				&::after {
+					top: 103%;
+				}
 			}
 		}
 		&__number {
@@ -151,6 +157,12 @@
 				display: none;
 			}
 		}
+	}
+}
+@media (max-width: 535px) {
+	.project__item {
+		margin: 1rem;
+		transform: scale(1);
 	}
 }
 @media screen and (max-width: 451px){
