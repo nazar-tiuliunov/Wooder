@@ -43,7 +43,7 @@ gulp.task('browser-sync', function(){
 
 gulp.task('build', async function(){
 	function clear(params) {
-		return del("dest/")
+		return del("dist/")
 	}
 	let buildHtml = gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'));
