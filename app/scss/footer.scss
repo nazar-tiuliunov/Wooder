@@ -1,0 +1,43 @@
+.footer {
+	background: #000 url("../img/main screen/DSC_1007_2000.webp") center / cover;
+	&__flex {
+		@include flex;
+		padding: 5px 10px;
+	}
+
+	&__company {
+		flex: 0 1 200px;
+	}
+
+	&__company--text {
+		color: #464646;
+		font-family: $PRg;
+		font-size: 15px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.38px;
+	}
+
+	&__logo {
+		flex: 1 1 auto;
+		text-align: center;
+		&--text {
+			position: relative;
+			color: #fff;
+			font-family: $PBd;
+			@include adaptive-font(36, 24);
+			text-transform: uppercase;
+			letter-spacing: 10.8px;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				@include adaptive-width(64, 50);
+				height: 4px;
+				background-color: #bea67c;
+				transform: translate(-105%, -50%);
+			}
+		}
+	}
+}

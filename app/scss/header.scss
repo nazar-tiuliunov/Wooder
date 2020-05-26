@@ -35,6 +35,8 @@
 		height: 20px;
 		margin: 0 15px 0 20px;
 		cursor: pointer;
+		pointer-events: none;
+		z-index: 200;
 		&::before,
 		&::after {
 			content: '';
@@ -61,6 +63,17 @@
 			background: #bea67c;
 			border-radius: 7px;
 		}
+		&.active {
+			span {display: none;}
+			&::before {
+				top: 8px;
+				transform: rotate(45deg);
+			}
+			&::after {
+				bottom: 9px;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 	&__main {
 		@include flex;
@@ -84,6 +97,10 @@
 				transform: translate(-105%, -50%);
 			}
 		}
+	}
+	&__navigation.active {
+		top: 0px;
+		transition: .3s ease-in-out;
 	}
 	&__list {
 		display: flex;

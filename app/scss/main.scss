@@ -1,5 +1,5 @@
-// about-section
-.about {
+// adavntages-section
+.adavntages {
 	&__flex {
 		@include flex;
 		flex-direction: column;
@@ -389,5 +389,44 @@
 		img {
 			padding: 0 15px 0 0;
 		}
+	}
+}
+
+// about-section
+
+.about {
+	&__flex {
+		@include flex;
+		padding: 100px 0;
+	}
+	&__item {
+		@include flex;
+	}
+	&__img {
+		@extend .adavntages__img;
+		&::before {
+			content: 'about us';
+			left: -50%;
+		}
+	}
+	&__inf {
+		@extend .adavntages__inf;
+		padding: 8%;
+	}
+	&__heading {
+		@extend .adavntages__heading;
+		&::before {
+			left: -50%;
+		}
+	}
+	&__paragraph {
+		@extend .adavntages__paragraph;
+		&::before {
+			top: 15%;
+			left: -20%;
+		}
+	}
+	&__link {
+		@extend .adavntages__link;
 	}
 }

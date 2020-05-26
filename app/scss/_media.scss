@@ -1,5 +1,5 @@
 @media screen and (max-width: 1440px){
-	.about {
+	.adavntages {
 		&__heading::before {
 			display: none;
 		}
@@ -18,7 +18,7 @@
 			transform: translate(-107%, -50%);
 		}
 	}
-	.about {
+	.adavntages {
 		&__graphic {
 			margin: 50px 25px;
 		}
@@ -54,7 +54,17 @@
 			img {min-width: 0;}
 		}
 		&__navigation {
-			display: none;
+			//display: none;
+			position: absolute;
+			left: 50%;
+			top: -300%;
+			width: 100%;
+			padding: 50px 10% 30px 10%;
+			background: #000;
+			transform: translate(-50%, 0);
+		}
+		&__burger {
+			pointer-events: painted;
 		}
 		&__burger-text {
 			display: none;
@@ -94,7 +104,7 @@
 			}
 		}
 	}
-	.about {
+	.adavntages {
 		&__flex {
 			padding: 25px 0;
 		}
@@ -158,6 +168,20 @@
 			}
 		}
 	}
+	.about {
+		&__flex {
+			padding: 25px 0;
+		}
+		&__item {
+			flex-wrap: wrap;
+		}
+		&__inf {
+			order: 1;
+		}
+		&__img {
+			order: 2;
+		}
+	}
 }
 @media (max-width: 535px) {
 	.project__item {
@@ -174,6 +198,12 @@
 	.header {
 		&__lang {
 			margin: 0 0 0 5px;
+		}
+		&__navigation {
+			padding: 50px 5% 30px 5%;
+		}
+		&__list {
+			li {margin: 0 0 0 20px;}
 		}
 	}
 	.info {

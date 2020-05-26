@@ -21,6 +21,7 @@
 @import "vars.scss";
 @import "header.scss";
 @import "main.scss";
+@import "footer.scss";
 @import "media.scss";
 // start styles and zeroing
 *,
@@ -68,7 +69,6 @@ select {
 	overflow: hidden;
 }
 .container {
-	position: relative;
 	max-width: 1190px;
 	margin: 0 auto;
 }

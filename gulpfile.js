@@ -1,39 +1,39 @@
 let gulp = require('gulp'),
-	 sass = require('gulp-sass'),
-	 browserSync = require('browser-sync'),
-	 rename = require('gulp-rename'),
-	 autoprefixer = require('gulp-autoprefixer'),
-	 del = require('del'),
-	 uglify = require('gulp-uglify-es').default;
+	sass = require('gulp-sass'),
+	browserSync = require('browser-sync'),
+	rename = require('gulp-rename'),
+	autoprefixer = require('gulp-autoprefixer'),
+	del = require('del'),
+	uglify = require('gulp-uglify-es').default;
 
-gulp.task('scss', function(){
+gulp.task('scss', function () {
 	return gulp.src('app/scss/style.scss')
-		.pipe(sass({outputStyle: 'expanded'}))
+		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(autoprefixer({
 			overrideBrowserlist: ["last 5 versions"],
 			cascade: true
 		}))
 		.pipe(gulp.dest('app/css/'))
-		.pipe(sass({outputStyle: 'compressed'}))
-		.pipe(rename({suffix: '.min'}))
+		.pipe(sass({ outputStyle: 'compressed' }))
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('app/css/'))
-		.pipe(browserSync.reload({stream: true}))
+		.pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('html', function(){
+gulp.task('html', function () {
 	return gulp.src('app/**/*.html')
-		.pipe(browserSync.reload({stream: true}))
+		.pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('script', function(){
+gulp.task('script', function () {
 	return gulp.src('app/js/script.js')
 		.pipe(uglify())
-		.pipe(rename({suffix: '.min'}))
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('app/js/'))
-		.pipe(browserSync.reload({stream: true}))
+		.pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('browser-sync', function(){
+gulp.task('browser-sync', function () {
 	browserSync.init({
 		server: {
 			baseDir: 'app/'
@@ -41,7 +41,7 @@ gulp.task('browser-sync', function(){
 	});
 });
 
-gulp.task('build', async function(){
+gulp.task('build', async function () {
 	function clear(params) {
 		return del("dist/")
 	}
@@ -64,7 +64,7 @@ gulp.task('build', async function(){
 		.pipe(gulp.dest('dist/'))
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', function () {
 	gulp.watch('app/scss/*.scss', gulp.parallel('scss'))
 	gulp.watch('app/**/*.html', gulp.parallel('html'))
 	gulp.watch('app/js/script.js', gulp.parallel('script'))
