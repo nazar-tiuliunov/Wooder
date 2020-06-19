@@ -1,1 +1,1 @@
-Template
+#Template of simple landing page.
