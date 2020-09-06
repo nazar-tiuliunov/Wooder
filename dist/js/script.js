@@ -12,4 +12,4 @@ window.addEventListener("scroll", function (event) {
 burger.addEventListener("click", function (event) {
 	burger.classList.toggle("active");
 	navigation.classList.toggle("active");
-})
+});
